@@ -79,9 +79,22 @@ var fight = function(enemyNames) {
 };
 
 for(var i = 0; i < enemyNames.length; i++) {
-    var pickedEnemyName = enemyNames[i];
-    enemyHealth = 50;
-    // call fight function with enemies
-    fight(pickedEnemyName);
+    // check robots health
+    if (playerHealth > 0){
+        window.alert("Welcome to Robot Gladiators! Round " + (i + 1));
+        // picked new enemy to fight based enemyNames array
+        var pickedEnemyName = enemyNames[i];
 
+        // reset enemy health before new fight
+        enemyHealth = 50;
+
+        // use debugger to pause script 
+         debugger;
+
+        // call fight function with enemies using pickedEnemyName variable 
+        fight(pickedEnemyName);
+    } else {
+        window.alert("You have lost your robot in battle! Game Over!");
+        break;
+    }
 }
